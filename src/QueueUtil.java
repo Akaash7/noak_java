@@ -1,5 +1,3 @@
-import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -34,11 +32,8 @@ public class QueueUtil {
             queue.add(doctor);
         }
 
-        int queueTime = Integer.MAX_VALUE;
-        for(int i=0; i<queue.size(); i++){
-            queueTime = Math.min(queueTime, queue.peek().currentQueueTime);
-        }
-        return queueTime;
+        // heap has least queue time value on top
+        return queue.peek().currentQueueTime;
     }
 
 }
